@@ -11,15 +11,7 @@ import sqlite3
 
 import functools
 
-'''
-base = os.path.dirname(os.path.abspath(__file__))
-icon_dir = os.path.join(base,'proyecto_calculo_mental')
-imgs = os.path.join(icon_dir,'start.png')
-imgs2 = os.path.join(icon_dir,'images.png')
-imgs3 = os.path.join(icon_dir,'volumen.png')
-imgs4 = os.path.join(icon_dir,'music.wav')
-imgs5 = os.path.join(icon_dir,'fasting.wav')
-'''
+
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -49,14 +41,7 @@ c = conn.cursor()
 
 def create_table():
     c.execute('CREATE TABLE IF NOT EXISTS Puntajes(Score INT)')
-'''
-def insert():
-    num = 10
-    c.execute("INSERT INTO Puntajes VALUES (?)", [num])    
-    conn.commit()
-    #c.close()
-    #conn.close()
-'''
+
 create_table()
 #insert()
 
@@ -136,12 +121,6 @@ def inicio_barra():
         btnIniciar["state"] = "normal"
         evaluacion["text"] = "¡Se acabo el tiempo! :("
         posiciones(altura)
-        
-       # for i in mejores_puntajes:
-        #    if puntaje>i:
-               # mejores_puntajes[i]=puntaje
-    
-        
 
     barra.after(cuenta_regresiva, inicio_barra)
 
@@ -197,14 +176,6 @@ def ejercicio_escrito():
     txt = ""
     txt = txt.join(map(str, lista))
     ejercicio["text"] = txt
-
-'''
-def play_wrong():
-    pygame.mixer.music.load("wrongg.ogg")
-    pygame.mixer.music.load("fasting.ogg")
-    pygame.mixer.music.play()
-
-'''
 
 def leer_resultado(self):
     global lista, puntaje, tiempo,correct
